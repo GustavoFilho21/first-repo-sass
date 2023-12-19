@@ -1,0 +1,57 @@
+$bg: #ccc;
+
+@mixin btn($cor: #020202){
+  border: none;
+  border-radius: 2px;
+  margin: 15px;
+  padding: 15px;
+  font-size: 14px;
+  transition: all .5s;
+
+  &:hover {
+    background-color: $cor;
+    color: #f5f5f5;
+  }
+}
+
+%botao {
+  /*@include btn;*/
+  background-color: #010101;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 2px;
+  margin: 15px;
+  padding: 15px;
+  font-size: 14px;
+  transition: all .5s;
+
+  &:hover {
+    background-color: #010101;
+    color: #f5f5f5;
+  }
+}
+
+body {
+  background-color: $bg;
+  text-align: center;
+}
+
+.banner {
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin-bottom: 10px;
+
+  &__btn {
+    @include btn;
+    //@extend %botao;
+    font-size: 1.5em;
+    background-color: yellowgreen;
+
+    &--danger {
+      @include btn(darken(red, 15%));
+      //@extend .banner__btn;
+      background-color: rgb(255, 0, 0);
+    }
+  }
+}
+
